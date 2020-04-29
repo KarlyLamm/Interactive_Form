@@ -6,6 +6,8 @@ const name = document.querySelector('#name');
 
 const email = document.querySelector('#mail');
 
+const phone = document.querySelector('#phone')
+
 //job Roles
 const jobRole = document.querySelector('#title');
 const otherJobOption = document.querySelector('#title option[value="other"]');
@@ -212,6 +214,25 @@ const emailValidator = () => {
     
 }
 
+const phoneValidator = () => {
+
+    const phoneValue = phone.value;
+    const phoneLabel = document.querySelector('label[for="phone"]');
+    
+    if(/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(phoneValue)){
+        phone.style.border = '';
+        phoneLabel.style.color = '';
+        phoneLabel.textContent = "Email:";
+        return true;
+    } else {
+        phone.style.border = "3px solid red";
+        phoneLabel.style.color = "red";
+        phoneLabel.innerHTML = "<strong>Please enter your phone number</strong>";
+        return false;
+    }
+    
+}
+
 
 const activityValidator = () => {
 
@@ -351,6 +372,12 @@ form.addEventListener('submit', (e)=> {
     if( ! cvvValidator() ){
         e.preventDefault();
     } else {
+        return true;
+    }
+    if( ! phoneValidator() ){
+        e.preventDefault();
+
+    } else{
         return true;
     }
 
