@@ -227,7 +227,7 @@ const phoneValidator = () => {
     } else {
         phone.style.border = "3px solid red";
         phoneLabel.style.color = "red";
-        phoneLabel.innerHTML = "<strong>Please enter your a valid phone number</strong>";
+        phoneLabel.innerHTML = "<strong>Please enter a valid phone number</strong>";
         return false;
     }
     
