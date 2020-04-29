@@ -222,7 +222,7 @@ const phoneValidator = () => {
     if(/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(phoneValue)){
         phone.style.border = '';
         phoneLabel.style.color = '';
-        phoneLabel.textContent = "Email:";
+        phoneLabel.textContent = "Phone Number:";
         return true;
     } else {
         phone.style.border = "3px solid red";
