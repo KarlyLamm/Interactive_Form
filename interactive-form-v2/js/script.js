@@ -6,7 +6,7 @@ const name = document.querySelector('#name');
 
 const email = document.querySelector('#mail');
 
-//job Role variables 
+//job Roles
 const jobRole = document.querySelector('#title');
 const otherJobOption = document.querySelector('#title option[value="other"]');
 const otherJobInput = document.querySelector('#other-title');
@@ -18,17 +18,16 @@ const designSelect = document.querySelector('#design');
 const colorTheme = document.createElement('option');
 const colorSelect = document.querySelector('#color');
 
-const jsPuns = document.querySelector('#design option[value="js puns"]');
-const jsPunsColor1 = document.querySelector('#color option[value="cornflowerblue"]');
-const jsPunsColor2 = document.querySelector('#color option[value="darkslategrey"]');
-const jsPunsColor3 = document.querySelector('#color option[value="gold"]');
+const jsIsLyfe = document.querySelector('#design option[value="jsIsLyfe"]');
+const jsIsLyfeColor1 = document.querySelector('#color option[value="blue"]');
+const jsIsLyfeColor2 = document.querySelector('#color option[value="grey"]');
+const jsIsLyfeColor3 = document.querySelector('#color option[value="gold"]');
 
 const heartJs = document.querySelector('#design option[value="heart js"]');
-const heartJsColor1 = document.querySelector('#color option[value="tomato"]');
+const heartJsColor1 = document.querySelector('#color option[value="orange"]');
 const heartJsColor2 = document.querySelector('#color option[value="steelblue"]');
-const heartJsColor3 = document.querySelector('#color option[value="dimgrey"]');
+const heartJsColor3 = document.querySelector('#color option[value="black"]');
 
-//activities variables 
 const activities = document.querySelector('.activities');
 const costMsg = document.createElement('element');
 activities.appendChild(costMsg);
@@ -53,18 +52,8 @@ const bitcoinValue = document.querySelector('#payment option[value="bitcoin"]').
 
 
 
-
-
-
-
-// on page load, the cursor appears in the "Name" field, ready to type
-
 name.focus();
 
-
-
-
-//"Your job role" text field appears when user selects "Other" from the job Role menu
 
 otherJobInput.hidden = true;
 
@@ -77,12 +66,6 @@ jobRole.addEventListener('change', ()=>{
     }
 
 });
-
-
-
-
-//Until a theme is selected from the "Design" menu, no color options appear in the "Color" drop down
-//and the "Color" field reads "Please select a T-shirt theme"
 
 designTheme.hidden = true;
 
@@ -98,17 +81,13 @@ for ( let i = 0; i < colors.length; i ++ ){
 }
 
 
-
-
-//When a new theme is selected from the "Design" menu, the "Color" field and drop down menu is updated
-
 designSelect.addEventListener('change', () => {
 
-    if( jsPuns.selected === true ){
-        jsPunsColor1.selected = true;
-        jsPunsColor1.hidden = false;
-        jsPunsColor2.hidden = false;
-        jsPunsColor3.hidden = false;
+    if( jsIsLyfe.selected === true ){
+        jsIsLyfeColor1.selected = true;
+        jsIsLyfeColor1.hidden = false;
+        jsIsLyfeColor2.hidden = false;
+        jsIsLyfeColor3.hidden = false;
         heartJsColor1.hidden = true;
         heartJsColor2.hidden = true;
         heartJsColor3.hidden = true;
@@ -118,18 +97,13 @@ designSelect.addEventListener('change', () => {
         heartJsColor1.hidden = false;
         heartJsColor2.hidden = false;
         heartJsColor3.hidden = false;
-        jsPunsColor1.hidden = true;
-        jsPunsColor2.hidden = true;
-        jsPunsColor3.hidden = true;
+        jsIsLyfeColor1.hidden = true;
+        jsIsLyfeColor2.hidden = true;
+        jsIsLyfeColor3.hidden = true;
     }  
 
 });
 
-
-
-
-//user cannot select two activities that are at the same time
-//Total cost of select activities is calculated and displayed blow the list of activities
 
 activities.addEventListener('change', (e) => {
 
@@ -164,10 +138,6 @@ activities.addEventListener('change', (e) => {
 });
 
 
-
-// Initially, the creit card section be selected and displayed in the form
-// when user select a payment option, other two payment options are hidden
-
 paymentMethod.hidden = true;
 paypal.style.display = 'none';
 bitcoin.style.display = 'none';
@@ -191,11 +161,6 @@ payment.addEventListener('change', () => {
 });
 
 
-
-
-
-//Validate requird fields and provide error indications for invalid fields upon from submission
-//when user fills in valid information, error indications disappear and finally able to submit
 
 const nameValidator = () => {
 
@@ -273,7 +238,7 @@ const ccNumvalidator = () => {
         } else {
             creditcardNumber.style.border = '3px solid red';
             ccNumLabel.style.color = 'red';
-            ccNumLabel.textContent = "Unvalid Card Number";
+            ccNumLabel.textContent = "Invalid Card Number";
             return false;
         }
 
@@ -299,7 +264,7 @@ const ccZipValidator = () => {
         } else {
             creditcardZip.style.border = '3px solid red';
             ccZipLabel.style.color = 'red';
-            ccZipLabel.textContent = "Unvalid Zip Code";
+            ccZipLabel.textContent = "Invalid Zip Code";
             return false;
         }
     } else {
@@ -328,7 +293,7 @@ const cvvValidator = () => {
         } else {
             creditcardCvv.style.border = '3px solid red';
             cvvLabel.style.color = 'red';
-            cvvLabel.textContent = "Unvalid CVV";
+            cvvLabel.textContent = "Invalid CVV";
             return false;
         }
 
