@@ -1,4 +1,4 @@
-console.log('connected well');
+
 
 const form = document. querySelector('form');
 
@@ -53,7 +53,11 @@ const adTrade = document.querySelector('#adTrade');
 const adTradeOption = document.querySelector('#payment option[value="adTrade"]');
 const adTradeValue = document.querySelector('#payment option[value="adTrade"]').getAttribute('value');
 
-
+//guest
+const guestInfo = document.querySelector('#guest');
+const guestYes = document.getElementById('yes');
+const guestNo = document.getElementById('no');
+const guestRes = document.querySelector('#guestRes')
 
 
 name.focus();
@@ -169,11 +173,10 @@ payment.addEventListener('change', () => {
         bitcoin.style.display = 'none';
         creditcard.style.display = 'none';
         paypal.style.display = 'none';
-        
+
     }
 
 });
-
 
 
 const nameValidator = () => {
@@ -229,7 +232,7 @@ const activityValidator = () => {
     }
 
     activityLegend.style.color = 'red';
-        activityLegend.innerHTML = "<strong>Please choose at least one activity</strong>"
+        activityLegend.innerHTML = "<strong>Please choose at least one from the activity list</strong>"
         return false;
 
     
