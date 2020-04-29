@@ -172,24 +172,28 @@
         <div id="adTrade" class="adTrade">
           <p>You will recieve an email in the next 1 - 3 days in regards to your inquiry after clicking "Register"</p>
         </div>
+      </fieldset>
+      <fieldset class="guestAttendance">
        
         <legend>Are you bringing a guest : </legend>
         <div id='guestRes' class='guestRes'>
        
         <input type="radio" id="yes" name='guestRes' > 
         <label for="yes">yes</label>
+        
         <input type="radio" id='no' name="guestRes">
         <label for="no">No</label>
         
         </div>
 
-        <div id="guest" class="guest">
+        <div class="reveal-if-active">
 
           <label for="guestName">What is your guest's name:</label>
           <input type="text" id="name" name="guest-name">
         
           <label for="guestmail">Enter your guest's email:</label>
           <input type="email" id="guestmail" name="guest-email">
+        
         </div>
 
 
