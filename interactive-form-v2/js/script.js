@@ -49,6 +49,10 @@ const bitcoin = document.querySelector('#bitcoin');
 const bitcoinOption = document.querySelector('#payment option[value="bitcoin"]');
 const bitcoinValue = document.querySelector('#payment option[value="bitcoin"]').getAttribute('value');
 
+const adTrade = document.querySelector('#adTrade');
+const adTradeOption = document.querySelector('#payment option[value="adTrade"]');
+const adTradeValue = document.querySelector('#payment option[value="adTrade"]').getAttribute('value');
+
 
 
 
@@ -141,6 +145,7 @@ activities.addEventListener('change', (e) => {
 paymentMethod.hidden = true;
 paypal.style.display = 'none';
 bitcoin.style.display = 'none';
+adTrade.style.display = 'none';
 
 payment.addEventListener('change', () => {
 
@@ -148,14 +153,23 @@ payment.addEventListener('change', () => {
         creditcard.style.display = 'block';
         paypal.style.display = 'none';
         bitcoin.style.display = 'none';
+        adTrade.style.display = 'none';
     } else if ( paypalOption.selected ) {
         paypal.style.display = 'block';
         creditcard.style.display = 'none';
         bitcoin.style.display = 'none';
+        adTrade.style.display = 'none';
     } else if ( bitcoinOption.selected ){
         bitcoin.style.display = 'block';
         creditcard.style.display = 'none';
         paypal.style.display = 'none';
+        adTrade.style.display='none' ;
+    } else if ( adTradeOption.selected){
+        adTrade.style.display = 'block';
+        bitcoin.style.display = 'none';
+        creditcard.style.display = 'none';
+        paypal.style.display = 'none';
+        
     }
 
 });
